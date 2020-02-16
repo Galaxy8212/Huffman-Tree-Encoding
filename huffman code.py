@@ -1,3 +1,10 @@
+    '''
+    note to mgrove36:
+    please read throught the code and comments, ant see if everything is working as
+    planned (i.e. as the comments explain)
+    if not, please tell me which ones and can we have a look together?
+    alos, i dont think the while loop works yet
+    '''
 
 from collections import Counter
 
@@ -53,6 +60,7 @@ huffmaned = False
 n = -1
 # creats variables for the while loop
 
+
 while not huffmaned:
     n += 1
     temp = []
@@ -61,17 +69,33 @@ while not huffmaned:
         for i in range(half_list)
             k =  i + n
             temp.append(char_list[k])
+        # selects which characters go on which side of the tree
+        # it does this by using the variable 'n', when n is less than half of the length of the list,
+        # the for loop sets temp to the odd values, and visa versa 
+
     except:
         break
+    # if any of the values ('k'/'n') are out of range, it moves on
 
     print('temp:', temp)
     print('')
+    # prints list 'temp' - debug
 
     if n < half_list:
         right_val.append(temp)
-
+    # puts 'temp' into 'right_val' if the try-except statement is getting the values for the 
+    # right side of the tree
+ 
     elif n > half_list:
         left_val.append(temp)
+    # puts 'temp' into 'left_val' if the try-except statement is getting the values for 
+    # the left side of the tree
+
+    # these work as n has to be greater than half the length of the list to get the values for
+    # the left side, and less for the right side
+
+
+
     
 '''
 to do:
