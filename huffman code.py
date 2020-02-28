@@ -110,8 +110,8 @@ def tree_making():
     print(f'encoded message: {encoded_txt}')
     # pritnts out the encoded message
     
-    return[encoded_txt, nodes]
-    # ...
+    return [encoded_txt, nodes]
+    # 
 
 tree_making()
 # runs the function 'encoding'
