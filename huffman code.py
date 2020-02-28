@@ -1,3 +1,5 @@
+# Huffman encoding
+# Harry Johnson
 
 from collections import Counter
 # imports function 'Counter' for later use
@@ -12,10 +14,13 @@ def find_nodes(nodes, target_character):
         if item == target_character:
             return[str(index)]
             # if the item is the desired character it returns the path
+
         if isinstance(item, (list, tuple)):
             # runs this function again to go further into the nested items
+
             path = find_nodes(item, target_character)
             # if the desired character is found, this returns its path
+
             if path:
                 return[str(index)] + path
                 # if the desired character is not found, it returns an empt list
@@ -86,6 +91,7 @@ def tree_making():
         # at the index 'i'
 
     print(f'nodes: {nodes}')
+    print()
     # the list 'nodes' is printed
     # this is a not very visual representation of the tree, where
     # each item in each tuple is a branch
@@ -101,6 +107,7 @@ def tree_making():
         # finds the characters paths and adds it to the dict 'encoded_values'
 
     print(f'encoded values: {encoded_values}')
+    print()
     # prints out the dict 'encoded values'
 
     for char in inp:
@@ -108,14 +115,39 @@ def tree_making():
         # adds the encoded characters to the message
     
     print(f'encoded message: {encoded_txt}')
-    # pritnts out the encoded message
-    
+    print()
+    # prints out the encoded message
+
+    inp_len = len(inp)*8
+    # works out the length of the input
+
+    print(f'Input length: {inp_len} bits')
+    print()
+    # prints the length of the input 
+
+    encoded_txt_len = len(encoded_txt)
+    # works out the length of the encoded text
+
+    print(f'encoded message length: {encoded_txt_len} bits')
+    print()
+    # prints out the length of the encoded message
+
+    efficiency = int((encoded_txt_len/inp_len)*100)
+    # works out the efficiency of the encoding
+
+    print(f'efficiency: {efficiency}%')
+    print()
+    # prints the efficiency
+
+    bits_saved = inp_len - encoded_txt_len
+    # works out the number of bits saved
+
+    print(f'bits saved: {bits_saved} bits')
+    print()
+    # prints the number of bits saved
+
     return [encoded_txt, nodes]
-    # 
+    # returns the encoded 
 
 tree_making()
 # runs the function 'encoding'
-
-
-
-        
